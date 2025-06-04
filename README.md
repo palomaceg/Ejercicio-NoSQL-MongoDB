@@ -440,9 +440,18 @@ myFirstDB> db.user.find().limit(2)
 - Busca por title 2 publicaciones.(haz la misma consulta 2 veces)
 
 ```
-myFirstDB> db.post.find({body:"Estilo pixelado retro. Muy raro."})
+myFirstDB> db.post.find({title:"Mini patito chef disponible"})
 ```
 
 ```
-myFirstDB> db.post.find({body:"Con sable de luz azul y bata marrón. Que la fuerza te acompañe."})
+myFirstDB> db.post.find({title:'Patito vampiro para trueque'})
+```
+
+## 2.4 BORRAR DATOS
+
+- Elimina a todos los usuarios con una edad mayor a 30.
+
+```
+myFirstDB> db.user.deleteMany({age:{$gt:30}})
+{ acknowledged: true, deletedCount: 4 }
 ```
